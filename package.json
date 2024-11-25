@@ -1,0 +1,17 @@
+{
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "start": "node run.js",
+    "day": "node run.js",
+    "generate": "node utils/generate.js"
+  },
+  "keywords": [],
+  "author": "Martin Mazur",
+  "license": "MIT",
+  "description": "Advent of Code 2024 attempts, this year in JavaScript with the help of AI (Cursor IDE)"
+}
