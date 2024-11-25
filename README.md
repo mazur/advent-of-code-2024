@@ -12,9 +12,9 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 
 ### Pre-work
 - Since I've been away from coding for a while - it was nice to have suggestions on project structure and tools to use. 
-- Most of the suggestions I got were wrong, or just dump. For example using Jest instead of the built in framework or using async to wait for syncronous reads.
+- Most of the suggestions I got were wrong, or just dumb. For example using Jest instead of the built in testing framework or using async to wait for syncronous reads.
 - Refactoring my code to a generator automatically was nice, but it didn't do a great job as it started to change things. I spent a lot of time fixing AI misstakes.
 - AI is really bad at git!
-- Lastly, suggesting authors it just started adding in random names of other people.
+- Lastly, when suggesting authors it just started adding in random names of other people.
 - Today I went from intigued to worried.
-- I'm not sure it saved me any time today - probably would have been quicker without the AI.
+- I'm not sure AI saved me any time today - probably would have been quicker without it.
