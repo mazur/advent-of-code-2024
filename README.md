@@ -6,7 +6,7 @@ Every year I take a stab at Advent of Code, each year I try something new so it'
 
 Since I skipped 2023 because life was too busy - this year I decided to go for a langauge I'm familiar with. I still wanted to try something new and since AI is all the rage - I decided to use an AI assistant while doing the challenges.
 
-I'll be documenting my learnings in this README.md file and also in random skeets on [BlueSky](https://bsky.app/profile/mazur.today).
+I'll be documenting my learnings in this README.md file and also in random skeets on [BlueSky](https://bsky.app/profile/mazur.today) or Mastodon [Mastodon](https://hachyderm.io/@mazur).
 
 ## Findings
 
