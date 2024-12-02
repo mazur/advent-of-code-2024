@@ -24,3 +24,4 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 - It does give some clever solutions to specific problems. Like using Math.sign to check the direction of the change.
 - It's helpful in refactoring simple code like tests in bulk.
 - Overall, I'm slightly frustrated. Still would have been quicker to do it manually; we are both learning.
+- I find it tough to trust the AI. It actually suggested a correct solution for Part 2; but I wanted to be more clever. I ended up reverting my clever solution and went with the AI suggested one.

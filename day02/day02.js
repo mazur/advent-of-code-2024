@@ -1,4 +1,3 @@
-
 function parseInput(input){
     const lines = input.split('\n');
     const numbers = lines.map((line) => line.split(' ').map(Number));
@@ -6,8 +5,7 @@ function parseInput(input){
     return numbers;
 }
 
-export function isValid(row, fix = false){
-    
+function checkSequence(row) {
     let prevDiff = 0;
 
     for (let i = 0; i < row.length; i++) {
@@ -28,6 +26,21 @@ export function isValid(row, fix = false){
     return true;
 }
 
+export function isValid(row, fix = false){
+    if (!fix) {
+        return checkSequence(row);
+    }
+    
+    for (let i = 0; i < row.length; i++) {
+        const newRow = [...row.slice(0, i), ...row.slice(i + 1)];
+        if (checkSequence(newRow)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 export function part1(input) {
     const reports = parseInput(input);
 
@@ -43,7 +56,16 @@ export function part1(input) {
 }
 
 export function part2(input) {
-    return 0;
+    const reports = parseInput(input);
+    
+    let count = 0;
+    for (const row of reports) {
+        if (isValid(row, true)) {
+            count++;
+        }
+    }
+    
+    return count;
 }
 
 /* figure this out later later */
