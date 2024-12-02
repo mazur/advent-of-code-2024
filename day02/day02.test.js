@@ -32,4 +32,16 @@ describe('Day 02', () => {
     it('should return false when numbers are equal', () => {
         assert.equal(isValid([8, 6, 4, 4, 1]), false);
     });
+
+    it('should return true when sequence can be fixed by removing one number (3)', () => {
+        assert.equal(isValid([1, 3, 2, 4, 5], true), true);
+    });
+
+    it('should return true when sequence can be fixed by removing a duplicate (4)', () => {
+        assert.equal(isValid([8, 6, 4, 4, 1], true), true);
+    });
+
+    it('should return false when sequence cannot be fixed by removing one number', () => {
+        assert.equal(isValid([1, 2, 7, 8, 9], true), false);
+    });
 });
