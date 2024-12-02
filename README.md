@@ -18,3 +18,9 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 - Lastly, when suggesting authors it just started adding in random names of other people.
 - Today I went from intigued to worried.
 - I'm not sure AI saved me any time today - probably would have been quicker without it.
+
+### Day 02
+- Working with AI can be stressful and confusing - it just adds code that I need to spend figuring out.
+- It does give some clever solutions to specific problems. Like using Math.sign to check the direction of the change.
+- It's helpful in refactoring simple code like tests in bulk.
+- Overall, I'm slightly frustrated. Still would have been quicker to do it manually; we are both learning.

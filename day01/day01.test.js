@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { part1, part2 } from '../day01/index.js';
+import { part1, part2 } from '../day01/day01.js';
 import { readInput } from '../utils/readInput.js';
 
 test('Day 01', (t) => {
