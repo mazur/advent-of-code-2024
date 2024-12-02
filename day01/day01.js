@@ -22,5 +22,28 @@ export function part1(input) {
 }
 
 export function part2(input) {
-    return 0;
+    const rows = input.split('\n'); 
+    const counts = {};
+
+
+    let sum = 0;
+
+    for (const row of rows) {
+        const [leftValue, rightValue] = row.split('  ').map(Number);
+
+        counts[leftValue] = counts[leftValue] || [0, 0];
+        counts[leftValue][0]++;
+        
+        counts[rightValue] = counts[rightValue] || [0, 0];
+        counts[rightValue][1]++;
+    }
+
+    for (const [key, value] of Object.entries(counts)) {
+        if(value[0] != 0) {
+            sum += key * value[0] * value[1];
+        }
+    }
+    
+    return sum;
+    
 }

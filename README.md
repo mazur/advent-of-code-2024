@@ -22,6 +22,8 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 ### Day 01
 - I miss read the puzzle and was trying to be to clever. AI saved me by being able to refactor out the stuff I did not need.
 - It's starting to feel a bit better working with the AU as I get more familiar with it.
+- Feed the AI smaller asks, it will do better. Be very specific in your prompts and pick words wisely.
+- The auto-complete is quite nice, especially when you've been away from coding for a while. It gives you decent code to work from.
 
 ### Day 02
 - Working with AI can be stressful and confusing - it just adds code that I need to spend figuring out.

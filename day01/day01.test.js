@@ -13,10 +13,13 @@ describe('Day 01', () => {
         assert.equal(part1(input), 11);
     });
 
-    /*
-    t.test('part 2 - sample input', () => {
-        const input = readInput(1, true);
-        assert.equal(part2(input), 'expected_result');
+    it('part 2 - sample input', () => {
+        const input = `3   4
+4   3
+2   5
+1   3
+3   9
+3   3`;
+        assert.equal(part2(input), 31);
     });
-    */
 });
