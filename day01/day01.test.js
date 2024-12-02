@@ -1,12 +1,16 @@
-import { test } from 'node:test';
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { part1, part2 } from '../day01/day01.js';
-import { readInput } from '../utils/readInput.js';
 
-test('Day 01', (t) => {
-    t.test('part 1 - sample input', () => {
-        const input = readInput(1, true);
-        assert.equal(part1(input), 'expected_result');
+describe('Day 01', () => {
+    it('part 1 - sample input', () => {
+        const input = `3   4
+4   3
+2   5
+1   3
+3   9
+3   3`;
+        assert.equal(part1(input), 11);
     });
 
     /*

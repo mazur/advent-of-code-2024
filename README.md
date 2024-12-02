@@ -19,6 +19,10 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 - Today I went from intigued to worried.
 - I'm not sure AI saved me any time today - probably would have been quicker without it.
 
+### Day 01
+- I miss read the puzzle and was trying to be to clever. AI saved me by being able to refactor out the stuff I did not need.
+- It's starting to feel a bit better working with the AU as I get more familiar with it.
+
 ### Day 02
 - Working with AI can be stressful and confusing - it just adds code that I need to spend figuring out.
 - It does give some clever solutions to specific problems. Like using Math.sign to check the direction of the change.
