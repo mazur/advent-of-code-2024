@@ -24,10 +24,10 @@ export function part2(input) {
     let isOn = true;
 
     for (const section of sections) {
-        if (section == "do()") {
+        if (section === "do()") {
             isOn = true;
             continue;
-        } else if (section == "don't()") {
+        } else if (section === "don't()") {
             isOn = false;
             continue;
         }
