@@ -14,20 +14,19 @@ export function part2(input) {
     return input;
 }`,
 
-    test: (day, paddedDay) => `import { test } from 'node:test';
+    test: (paddedDay) => `import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { part1, part2 } from '../day${paddedDay}/index.js';
-import { readInput } from '../utils/readInput.js';
+import { part1, part2 } from '../day${paddedDay}/day${paddedDay}.js';
 
-test('Day ${paddedDay}', (t) => {
-    t.test('part 1 - sample input', () => {
-        const input = readInput(${day}, true);
+describe('Day ${paddedDay}', () => {
+    it('part 1 - sample input', () => {
+        const input = '';
         assert.equal(part1(input), 'expected_result');
     });
 
     /*
-    t.test('part 2 - sample input', () => {
-        const input = readInput(${day}, true);
+    it('part 2 - sample input', () => {
+        const input = '';
         assert.equal(part2(input), 'expected_result');
     });
     */
@@ -49,9 +48,8 @@ function generateDay(day) {
 
     // Create files
     writeFileSync(join(srcDayDir, `day${paddedDay}.js`), templates.index);
-    writeFileSync(join(srcDayDir, `day${paddedDay}.test.js`), templates.test(day, paddedDay));
+    writeFileSync(join(srcDayDir, `day${paddedDay}.test.js`), templates.test(paddedDay));
     writeFileSync(join(srcDayDir, 'input.txt'), '');
-    writeFileSync(join(srcDayDir, 'sample.txt'), '');
 
     console.log(`✨ Generated files for day ${paddedDay}`);
 }
