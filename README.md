@@ -36,3 +36,11 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 - AI helped a lot with regexp
 - For this specific puzzle the AI assistant was surprisingly helpful.
 - The "high-jacking" of [TAB] key to autocomplete code is quite annoying as I sometimes just want to write a tab.
+
+### Day 04
+- Initially on part 1 the AI was legitimately helpful. It generated a solution which was almost correct and only needed some minor fixes.
+- On part 2 it was not helpful at all. Even on smaller tasks it was generating code which was too complex or not solving the problem correctly.
+- I eventually rewrote all of part 2 by hand, just to get it done.
+- I've also discovered that the AI keeps jumping between code styles a lot, this would lead to a code base that does not have a consistent style.
+- I also ran my prompts through chatGPT-4o and compared them to Claud3.5-sonnet that is default in Cursor. I would say the chatGPT-4o generated slightly better code.
+- Generally, I'm back to gating the experience of an AI coding companion.
