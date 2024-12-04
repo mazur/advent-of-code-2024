@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { part1, part2 } from '../day03/day03.js';;
+import { part1, part2 } from '../day03/day03.js';
 
 describe('Day 03', () => {
     it('part 1 - sample input', () => {
