@@ -1,41 +1,79 @@
+let rules = [];
+let updates = [];
+
 function parseInput(input) {
     const [rulesStr, updatesStr] = input.split('\n\n');
 
-    const updates = updatesStr.split('\n').map(row => row.split(',').map(Number));    
-    const rules =  rulesStr.split('\n').map(rule => rule.split('|').map(Number));
-
-    return { rules, updates };
+    updates = updatesStr.split('\n').map(row => row.split(',').map(Number));    
+    rules = rulesStr.split('\n').map(rule => rule.split('|').map(Number));
 }
 
+function isCorrectOrder(update) {
+    const pagePositions = new Map();
+    update.forEach((page, index) => pagePositions.set(page, index));
 
-export function part1(input) {
-    const { rules, updates } = parseInput(input);
-
-    function isCorrectOrder(update) {
-        const pagePositions = new Map();
-        update.forEach((page, index) => pagePositions.set(page, index));
-
-        for (const [before, after] of rules) {
-            if (pagePositions.has(before) && pagePositions.has(after)) {
-                if (pagePositions.get(before) > pagePositions.get(after)) {
-                    return false;
-                }
+    for (const [before, after] of rules) {
+        if (pagePositions.has(before) && pagePositions.has(after)) {
+            if (pagePositions.get(before) > pagePositions.get(after)) {
+                return false;
             }
         }
-        return true;
     }
+    return true;
+}
 
-    let sumOfMiddlePages = 0;
+function getSumOfMiddlePages(updates) {
+    return updates.reduce((sum, update) => {
+        const middleIndex = Math.floor(update.length / 2);
+        return sum + update[middleIndex];
+    }, 0);
+}
+
+export function part1(input) {
+    parseInput(input);
+
+    const correctUpdates = [];
     updates.forEach(update => {
         if (isCorrectOrder(update)) {
-            const middleIndex = Math.floor(update.length / 2);
-            sumOfMiddlePages += update[middleIndex];
+            correctUpdates.push(update);
         }
     });
 
-    return sumOfMiddlePages;
+    return getSumOfMiddlePages(correctUpdates);
+}
+
+function orderUpdateCorrectly(update) {
+    const updateList = [...update];
+    let swapped;
+
+    do {
+        swapped = false;
+        for (const rule of rules) {
+
+            const indexBefore = updateList.indexOf(rule[0]);
+            const indexAfter = updateList.indexOf(rule[1]);
+
+            if (indexBefore !== -1 && indexAfter !== -1 && indexBefore > indexAfter) {
+
+                [updateList[indexBefore], updateList[indexAfter]] = [updateList[indexAfter], updateList[indexBefore]];
+                swapped = true;
+            }
+        }
+    } while (swapped);
+
+    return updateList;
 }
 
 export function part2(input) {
-    return 0;
+    parseInput(input);
+    
+    const correctUpdates = [];
+
+    updates.forEach(update => {
+        if (!isCorrectOrder(update)) {
+            correctUpdates.push(orderUpdateCorrectly(update));
+        }
+    });
+    
+    return getSumOfMiddlePages(correctUpdates);
 }

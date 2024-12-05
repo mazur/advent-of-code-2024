@@ -48,3 +48,5 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 ### Day 05
 - Coding with AI is less fun. You spend less time figuring out the problem and more time debugging code.
 - AI makes simple misstakes like mixing up logical tests.
+- WOW! AI loves complicated solutions. I tried to get me to implement part 2 using a dependency graphg and Kahn's algorithm. Way to over engineer it AI buddy!
+- Personal refelction is that the more/better help I get the less fun I'm having solving the puzzles.
