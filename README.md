@@ -44,3 +44,7 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 - I've also discovered that the AI keeps jumping between code styles a lot, this would lead to a code base that does not have a consistent style.
 - I also ran my prompts through chatGPT-4o and compared them to Claud3.5-sonnet that is default in Cursor. I would say the chatGPT-4o generated slightly better code.
 - Generally, I'm back to hating the experience of an AI coding companion.
+
+### Day 05
+- Coding with AI is less fun. You spend less time figuring out the problem and more time debugging code.
+- AI makes simple misstakes like mixing up logical tests.
