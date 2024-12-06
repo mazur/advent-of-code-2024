@@ -50,3 +50,10 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 - AI makes simple misstakes like mixing up logical tests.
 - WOW! AI loves complicated solutions. I tried to get me to implement part 2 using a dependency graphg and Kahn's algorithm. Way to over engineer it AI buddy!
 - Personal refelction is that the more/better help I get the less fun I'm having solving the puzzles.
+
+### Day 06
+- Damn I hate JavaScript. I hate Sets and Maps and how they work. The langauge is so primitive!
+- I'm getting into the flow of working with AI, but damn it is dumb.
+- The rythem is something like, prompt, run tests, debug, prompt, clean up manualy.
+- While useful at times I do find it annoying that it keeps changing and rewriting code from scratch, even when not needed.
+- AI also sucks att efficient codeand optimizing code. The first solution I had for part 2 today took 8s to run. I would have never implemented it that way to begin with. The AI also failed all optimization attempts. I finally did a manual optimization, which isn't the best one; but it brings it donw to 2s - and that was only a very minor change that the AI couldn't figure out.

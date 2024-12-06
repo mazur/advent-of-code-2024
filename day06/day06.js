@@ -22,9 +22,9 @@ function findGuardPositionAndDirection(grid) {
     return { position: null, direction: null };
 }
 
-function moveGuard(grid, guardPosition, guardDirection, moves, directions) {
-    const visited = new Set();
-    visited.add(`${guardPosition.x},${guardPosition.y}`);
+function moveGuard(grid, guardPosition, guardDirection) {
+    const visited = new Map();
+    visited.set(`${guardPosition.x},${guardPosition.y}`, guardPosition);
 
     while (true) {
         const { dx, dy } = moves[guardDirection];
@@ -41,70 +41,70 @@ function moveGuard(grid, guardPosition, guardDirection, moves, directions) {
             guardDirection = directions[(directions.indexOf(guardDirection) + 1) % 4];
         } else {
             guardPosition = nextPosition;
-            visited.add(`${guardPosition.x},${guardPosition.y}`);
+            visited.set(`${guardPosition.x},${guardPosition.y}`, guardPosition);
         }
     }
 
-    return visited;
+    return Array.from(visited.values());
 }
 
 export function part1(input) {
     const grid = parseInput(input);
     const { position: guardPosition, direction: guardDirection } = findGuardPositionAndDirection(grid);
-    const visited = moveGuard(grid, guardPosition, guardDirection, moves, directions);
+    const visited = moveGuard(grid, guardPosition, guardDirection);
 
-    return visited.size;
+    return visited.length;
 }
 
 export function part2(input) {
     const grid = parseInput(input);
 
-    const { position: guardPosition, direction: guardDirection } = findGuardPositionAndDirection(grid,);
+    const { position: guardPosition, direction: guardDirection } = findGuardPositionAndDirection(grid);
+    const visited = moveGuard(grid, guardPosition, guardDirection);
+
     const loopCausingPositions = new Set();
 
-    for (let y = 0; y < grid.length; y++) {
-        for (let x = 0; x < grid[y].length; x++) {
-            if (grid[y][x] === '.' && !(x === guardPosition.x && y === guardPosition.y)) {
-                grid[y][x] = '#';
+    for (const position of visited) {
+        if (grid[position.y][position.x] === '.' && !(position.x === guardPosition.x && position.y === guardPosition.y)) {
+            grid[position.y][position.x] = '#';
 
-                const visited = new Set();
-                let currentPosition = { ...guardPosition };
-                let currentDirection = guardDirection;
-                let isLoop = false;
+            const visited = new Set();
+            let currentPosition = { ...guardPosition };
+            let currentDirection = guardDirection;
+            let isLoop = false;
 
-                while (true) {
-                    const { dx, dy } = moves[currentDirection];
-                    const nextPosition = { x: currentPosition.x + dx, y: currentPosition.y + dy };
+            while (true) {
+                const { dx, dy } = moves[currentDirection];
+                const nextPosition = { x: currentPosition.x + dx, y: currentPosition.y + dy };
 
-                    if (
-                        nextPosition.y < 0 || nextPosition.y >= grid.length ||
-                        nextPosition.x < 0 || nextPosition.x >= grid[0].length
-                    ) {
-                        break;
-                    }
-
-                    const nextKey = `${nextPosition.x},${nextPosition.y},${currentDirection}`;
-
-                    if (visited.has(nextKey)) {
-                        isLoop = true;
-                        break;
-                    }
-
-                    visited.add(nextKey);
-
-                    if (grid[nextPosition.y][nextPosition.x] === '#') {
-                        currentDirection = directions[(directions.indexOf(currentDirection) + 1) % 4];
-                    } else {
-                        currentPosition = nextPosition;
-                    }
+                if (
+                    nextPosition.y < 0 || nextPosition.y >= grid.length ||
+                    nextPosition.x < 0 || nextPosition.x >= grid[0].length
+                ) {
+                    break;
                 }
 
-                if (isLoop) {
-                    loopCausingPositions.add(`${x},${y}`);
+                const nextKey = `${nextPosition.x},${nextPosition.y},${currentDirection}`;
+
+                if (visited.has(nextKey)) {
+                    isLoop = true;
+                    break;
                 }
 
-                grid[y][x] = '.';
+                visited.add(nextKey);
+
+                if (grid[nextPosition.y][nextPosition.x] === '#') {
+                    currentDirection = directions[(directions.indexOf(currentDirection) + 1) % 4];
+                } else {
+                    currentPosition = nextPosition;
+                }
             }
+
+            if (isLoop) {
+                loopCausingPositions.add(`${position.x},${position.y}`);
+            }
+
+            grid[position.y][position.x] = '.';
         }
     }
 
