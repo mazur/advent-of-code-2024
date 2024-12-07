@@ -1,4 +1,12 @@
 export function part1(input) {
+    return processInput(input, findValidCombination);
+}
+
+export function part2(input) {
+    return processInput(input, findValidCombinationWithConcat);
+}
+
+function processInput(input, combinationFunction) {
     const lines = input.trim().split('\n');
     const validResults = [];
 
@@ -7,7 +15,7 @@ export function part1(input) {
         const targetNumber = parseInt(target.trim(), 10);
         const numbers = numbersStr.trim().split(' ').map(Number);
 
-        if (findValidCombination(numbers, targetNumber)) {
+        if (combinationFunction(numbers, targetNumber)) {
             validResults.push(targetNumber);
         }
     }
@@ -16,7 +24,14 @@ export function part1(input) {
 }
 
 function findValidCombination(numbers, target) {
-    const operators = ['+', '*'];
+    return findCombination(numbers, target, ['+', '*']);
+}
+
+function findValidCombinationWithConcat(numbers, target) {
+    return findCombination(numbers, target, ['+', '*', '|']);
+}
+
+function findCombination(numbers, target, operators) {
     const n = numbers.length;
 
     function evaluateLeftToRight(expression) {
@@ -30,6 +45,8 @@ function findValidCombination(numbers, target) {
                 result += number;
             } else if (operator === '*') {
                 result *= number;
+            } else if (operator === '|') {
+                result = parseInt('' + result + number, 10);
             }
         }
 
@@ -52,8 +69,4 @@ function findValidCombination(numbers, target) {
     }
 
     return backtrack(1, [numbers[0]]);
-}
-
-export function part2(input) {
-    return 0;
 }
