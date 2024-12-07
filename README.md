@@ -57,3 +57,9 @@ I'll be documenting my learnings in this README.md file and also in random skeet
 - The rythem is something like, prompt, run tests, debug, prompt, clean up manualy.
 - While useful at times I do find it annoying that it keeps changing and rewriting code from scratch, even when not needed.
 - AI also sucks att efficient codeand optimizing code. The first solution I had for part 2 today took 8s to run. I would have never implemented it that way to begin with. The AI also failed all optimization attempts. I finally did a manual optimization, which isn't the best one; but it brings it donw to 2s - and that was only a very minor change that the AI couldn't figure out.
+
+### Day 07
+- Today the AI did really good. I spent some time on engineering the prompt to explain what I wanted and that made it generate code that was much more aligned with how I would solve it.
+- The AI threw in some, unexpected, but clever solutions on part 2.
+- All in all, I think I'm getting the hang of how to work with an AI companion; both on larger solutions and smaller line-by-line fixes.
+- Somehow, it feels like cheating; but since this year was about trying out AI coding assistants I will keep at it.
